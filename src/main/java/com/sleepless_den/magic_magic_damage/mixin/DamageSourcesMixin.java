@@ -13,7 +13,7 @@ public class DamageSourcesMixin {
 
     @Inject(method = "mobAttack", at = @At("HEAD"), cancellable = true)
     private void magicMagicDamage$mobAttack(LivingEntity mob, CallbackInfoReturnable<DamageSource> cir) {
-        if (mob instanceof EnderMan || mob instanceof Endermite || mob instanceof Witch) { //TODO: convert this to an entity tag
+        if (mob instanceof EnderMan || mob instanceof Endermite || mob instanceof Witch|| mob instanceof Phantom) { //TODO: convert this to an entity tag
             cir.setReturnValue(((DamageSources)((Object)this)).source(MagicMagicDamageDamageTypes.MAGIC_MOB_ATTACK, mob));
         }
     }
